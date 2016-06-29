@@ -6,7 +6,7 @@ public class Claw : MonoBehaviour
 	public Transform origin;
 	public float speed = 4f;
 	public Gun gun;
-	//add scoremanager variable
+	public ScoreManager scoreManager;
 
 	private Vector3 target;
 	private int jewelValue = 100;
@@ -32,7 +32,7 @@ public class Claw : MonoBehaviour
 			gun.CollectedObject();
 			if (hitJewel)
 			{
-				//add points
+				scoreManager.AddPoints(jewelValue);
 				hitJewel = false;
 			}
 			Destroy(childObject);
